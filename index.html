@@ -387,7 +387,7 @@
             color: white;
         }
 
-        /* Padlet Contributions Section */
+        /* Padlet Contributions Section - Side by Side Layout */
         .padlet-intro {
             max-width: 800px;
             margin: 0 auto 3rem;
@@ -397,14 +397,12 @@
             line-height: 1.8;
         }
 
-        .padlet-grid {
+        .padlet-item {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .padlet-post {
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 4rem;
             background: white;
             border-radius: 15px;
             overflow: hidden;
@@ -412,14 +410,20 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .padlet-post:hover {
+        .padlet-item:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
         }
 
+        .padlet-screenshot-wrapper {
+            height: 100%;
+            min-height: 350px;
+        }
+
         .padlet-screenshot {
             width: 100%;
-            height: 280px;
+            height: 100%;
+            min-height: 350px;
             background: linear-gradient(135deg, #e0e0e0 0%, #c0c0c0 100%);
             display: flex;
             align-items: center;
@@ -428,37 +432,38 @@
             font-weight: 600;
             font-size: 1rem;
             text-align: center;
-            padding: 1rem;
+            padding: 2rem;
             position: relative;
             overflow: hidden;
         }
 
         .padlet-screenshot::before {
             content: '📸';
-            font-size: 3rem;
+            font-size: 4rem;
             position: absolute;
-            opacity: 0.3;
+            opacity: 0.2;
         }
 
-        .padlet-content {
-            padding: 1.5rem;
+        .padlet-details {
+            padding: 2.5rem;
         }
 
         .week-label {
             display: inline-block;
             background: var(--accent-color);
             color: white;
-            padding: 0.4rem 1rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 20px;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
-        .padlet-content h4 {
+        .padlet-details h4 {
             color: var(--primary-color);
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
         }
 
         .contribution-type {
@@ -466,15 +471,15 @@
             align-items: center;
             gap: 0.5rem;
             color: var(--accent-color);
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 500;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
-        .padlet-content p {
+        .padlet-details p {
             color: var(--text-light);
-            line-height: 1.7;
-            font-size: 0.95rem;
+            line-height: 1.8;
+            font-size: 1.05rem;
         }
 
         /* Projects Grid */
@@ -665,8 +670,18 @@
                 grid-template-columns: 1fr;
             }
 
-            .projects-grid, .research-grid, .padlet-grid {
+            .projects-grid, .research-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Padlet responsive - stack vertically on mobile */
+            .padlet-item {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .padlet-screenshot-wrapper {
+                min-height: 250px;
             }
 
             .timeline {
@@ -789,71 +804,37 @@
                 <p>Exploring cutting-edge topics in computer engineering and image processing</p>
             </div>
             <div class="research-grid">
-                <!-- Research Card 1 -->
+                <!-- Research Card 1 - COMPLETED -->
                 <div class="research-card">
                     <div class="research-header">
                         <div class="research-icon">📄</div>
                         <div>
                             <h3>Deep Learning Approaches in Medical Image Segmentation</h3>
-                            <div class="research-meta">Research Paper • January 2024</div>
+                            <div class="research-meta">Research Paper • January 2024 • <strong style="color: #27ae60;">✓ Completed</strong></div>
                         </div>
                     </div>
                     <p><strong>Abstract:</strong> This study explores the application of convolutional neural networks (CNNs) for automated tumor detection in MRI scans. We compared traditional image processing techniques with modern deep learning approaches, achieving 92% accuracy in segmentation tasks.</p>
                     <p><strong>Key Findings:</strong> Deep learning models outperformed traditional methods by 15% in edge detection accuracy and reduced processing time by 40%.</p>
                     <div class="research-links">
-                        <a href="#" class="research-btn">📥 Read Paper</a>
-                        <a href="#" class="research-btn">📊 View Slides</a>
+                        <a href="documents/medical-imaging-segmentation.pdf" class="research-btn" target="_blank">📥 Read Paper</a>
+                        <a href="documents/medical-imaging-slides.pdf" class="research-btn" target="_blank">📊 View Slides</a>
                     </div>
                 </div>
 
-                <!-- Research Card 2 -->
-                <div class="research-card">
+                <!-- Research Card 2 - ONGOING -->
+                <div class="research-card" style="border-left-color: #f39c12;">
                     <div class="research-header">
                         <div class="research-icon">🔬</div>
                         <div>
                             <h3>Adaptive Filtering Techniques for Real-Time Image Enhancement</h3>
-                            <div class="research-meta">Conference Paper • November 2023</div>
+                            <div class="research-meta">Ongoing Research Project • Expected Completion: May 2024 • <strong style="color: #f39c12;">⏳ In Progress</strong></div>
                         </div>
                     </div>
-                    <p><strong>Abstract:</strong> Investigation of adaptive histogram equalization and bilateral filtering for enhancing low-light images in real-time applications. Implemented algorithms optimized for embedded systems with limited computational resources.</p>
-                    <p><strong>Published:</strong> Presented at [Conference Name] 2023. Received Best Student Paper Award for innovative approach to real-time processing.</p>
+                    <p><strong>Overview:</strong> Currently investigating adaptive histogram equalization and bilateral filtering for enhancing low-light images in real-time applications. Implementing algorithms optimized for embedded systems with limited computational resources.</p>
+                    <p><strong>Current Status:</strong> Completed literature review and algorithm design phase. Currently in the implementation and testing stage. Preliminary results show 30% improvement in image quality metrics.</p>
                     <div class="research-links">
-                        <a href="#" class="research-btn">📥 Download PDF</a>
-                        <a href="#" class="research-btn">💻 View Code</a>
-                    </div>
-                </div>
-
-                <!-- Research Card 3 -->
-                <div class="research-card">
-                    <div class="research-header">
-                        <div class="research-icon">📚</div>
-                        <div>
-                            <h3>IoT Security: A Comprehensive Review of Encryption Methods</h3>
-                            <div class="research-meta">Literature Review • September 2023</div>
-                        </div>
-                    </div>
-                    <p><strong>Overview:</strong> Comprehensive analysis of current encryption standards in IoT devices, examining trade-offs between security strength and computational efficiency. Reviewed 50+ peer-reviewed papers published between 2020-2023.</p>
-                    <p><strong>Contribution:</strong> Proposed a lightweight encryption framework suitable for resource-constrained IoT devices with minimal performance overhead.</p>
-                    <div class="research-links">
-                        <a href="#" class="research-btn">📥 Read Review</a>
-                        <a href="#" class="research-btn">🔗 References</a>
-                    </div>
-                </div>
-
-                <!-- Research Card 4 - ADD MORE AS NEEDED -->
-                <div class="research-card">
-                    <div class="research-header">
-                        <div class="research-icon">🧪</div>
-                        <div>
-                            <h3>Your Research Title Here</h3>
-                            <div class="research-meta">Research Type • Date</div>
-                        </div>
-                    </div>
-                    <p><strong>Abstract:</strong> Brief description of your research paper, thesis, or study. Include the problem statement, methodology, and significance of the work.</p>
-                    <p><strong>Results/Impact:</strong> Key findings or contributions from your research work.</p>
-                    <div class="research-links">
-                        <a href="#" class="research-btn">📥 Read More</a>
-                        <a href="#" class="research-btn">📎 Supplementary</a>
+                        <a href="#" class="research-btn" style="background: #f39c12; color: white;">⏳ In Progress</a>
+                        <a href="https://github.com/yourusername/adaptive-filtering" class="research-btn" target="_blank">💻 View Code</a>
                     </div>
                 </div>
             </div>
@@ -889,14 +870,45 @@
                     </div>
                 </div>
 
-                <!-- Padlet Post 4 -->
+                <!-- Padlet Post 2 -->
                 <div class="padlet-post">
                     <div class="padlet-screenshot">
-                        Screenshot: Week 7 Padlet Post<br>
+                        Screenshot: Week 3 Padlet Post<br>
                         (Replace with actual screenshot image)
                     </div>
                     <div class="padlet-content">
-                        <span class="week-label">Week 7</span>
+                        <span class="week-label">Week 2</span>
+                        <h4>Image Enhancement Techniques</h4>
+                        <div class="contribution-type">
+                            📄 Research Article
+                        </div>
+                        <p>Shared a comprehensive review paper on histogram equalization and contrast stretching techniques. Provided practical MATLAB code snippets for implementation, which were widely used by classmates in their assignments.</p>
+                    </div>
+                </div>
+                <!-- Padlet Post 3 -->
+                <div class="padlet-post">
+                    <div class="padlet-screenshot">
+                        Screenshot: Week 5 Padlet Post<br>
+                        (Replace with actual screenshot image)
+                    </div>
+                    <div class="padlet-content">
+                        <span class="week-label">Week 3</span>
+                        <h4>Noise Reduction Methods</h4>
+                        <div class="contribution-type">
+                            🖼️ Infographic
+                        </div>
+                        <p>Created an infographic summarizing spatial and frequency domain noise reduction techniques, including median filtering and Gaussian smoothing. The post received positive feedback for clarity and visual appeal.</p>
+                    </div>
+                </div>
+
+                <!-- Padlet Post 4 -->
+                <div class="padlet-post">
+                    <div class="padlet-screenshot">
+                        Screenshot: Week 4 Padlet Post<br>
+                        (Replace with actual screenshot image)
+                    </div>
+                    <div class="padlet-content">
+                        <span class="week-label">Week 4</span>
                         <h4>Edge Detection Comparison</h4>
                         <div class="contribution-type">
                             📊 Infographic
@@ -922,6 +934,102 @@
                 </div>
 
                 <!-- Padlet Post 6 -->
+                <div class="padlet-post">
+                    <div class="padlet-screenshot">
+                        Screenshot: Week 12 Padlet Post<br>
+                        (Replace with actual screenshot image)
+                    </div>
+                    <div class="padlet-content">
+                        <span class="week-label">Week 12</span>
+                        <h4>Image Segmentation Techniques</h4>
+                        <div class="contribution-type">
+                            📄 Research Article
+                        </div>
+                        <p>Shared recent paper on watershed segmentation for medical imaging. Led discussion on advantages over traditional thresholding methods, contributing to rich peer learning experience.</p>
+                    </div>
+                </div>
+
+                <!-- Padlet Post 7 -->
+                <div class="padlet-post">
+                    <div class="padlet-screenshot">
+                        Screenshot: Week 7 Padlet Post<br>
+                        (Replace with actual screenshot image)
+                    </div>
+                    <div class="padlet-content">
+                        <span class="week-label">Week 7</span>
+                        <h4>Image Segmentation Techniques</h4>
+                        <div class="contribution-type">
+                            📄 Research Article
+                        </div>
+                        <p>Shared recent paper on watershed segmentation for medical imaging. Led discussion on advantages over traditional thresholding methods, contributing to rich peer learning experience.</p>
+                    </div>
+                </div>
+
+                <!-- Padlet Post 8 -->
+                <div class="padlet-post">
+                    <div class="padlet-screenshot">
+                        Screenshot: Week 12 Padlet Post<br>
+                        (Replace with actual screenshot image)
+                    </div>
+                    <div class="padlet-content">
+                        <span class="week-label">Week 12</span>
+                        <h4>Image Segmentation Techniques</h4>
+                        <div class="contribution-type">
+                            📄 Research Article
+                        </div>
+                        <p>Shared recent paper on watershed segmentation for medical imaging. Led discussion on advantages over traditional thresholding methods, contributing to rich peer learning experience.</p>
+                    </div>
+                </div>
+
+                <!-- Padlet Post 9 -->
+                <div class="padlet-post">
+                    <div class="padlet-screenshot">
+                        Screenshot: Week 12 Padlet Post<br>
+                        (Replace with actual screenshot image)
+                    </div>
+                    <div class="padlet-content">
+                        <span class="week-label">Week 12</span>
+                        <h4>Image Segmentation Techniques</h4>
+                        <div class="contribution-type">
+                            📄 Research Article
+                        </div>
+                        <p>Shared recent paper on watershed segmentation for medical imaging. Led discussion on advantages over traditional thresholding methods, contributing to rich peer learning experience.</p>
+                    </div>
+                </div>
+
+                <!-- Padlet Post 10 -->
+                <div class="padlet-post">
+                    <div class="padlet-screenshot">
+                        Screenshot: Week 12 Padlet Post<br>
+                        (Replace with actual screenshot image)
+                    </div>
+                    <div class="padlet-content">
+                        <span class="week-label">Week 12</span>
+                        <h4>Image Segmentation Techniques</h4>
+                        <div class="contribution-type">
+                            📄 Research Article
+                        </div>
+                        <p>Shared recent paper on watershed segmentation for medical imaging. Led discussion on advantages over traditional thresholding methods, contributing to rich peer learning experience.</p>
+                    </div>
+                </div>
+
+                <!-- Padlet Post 11 -->
+                <div class="padlet-post">
+                    <div class="padlet-screenshot">
+                        Screenshot: Week 12 Padlet Post<br>
+                        (Replace with actual screenshot image)
+                    </div>
+                    <div class="padlet-content">
+                        <span class="week-label">Week 12</span>
+                        <h4>Image Segmentation Techniques</h4>
+                        <div class="contribution-type">
+                            📄 Research Article
+                        </div>
+                        <p>Shared recent paper on watershed segmentation for medical imaging. Led discussion on advantages over traditional thresholding methods, contributing to rich peer learning experience.</p>
+                    </div>
+                </div>
+
+                <!-- Padlet Post 12 -->
                 <div class="padlet-post">
                     <div class="padlet-screenshot">
                         Screenshot: Week 12 Padlet Post<br>
@@ -1148,36 +1256,3 @@
         });
     </script>
 </body>
-</html>Introduction to Digital Images</h4>
-                        <div class="contribution-type">
-                            📊 Infographic
-                        </div>
-                        <p>Created a visual guide explaining pixel representation, color models (RGB, HSV), and image resolution fundamentals. Received 15+ likes and sparked discussion on color space applications.</p>
-                    </div>
-                </div>
-
-                <!-- Padlet Post 2 -->
-                <div class="padlet-post">
-                    <div class="padlet-screenshot">
-                        Screenshot: Week 3 Padlet Post<br>
-                        (Replace with actual screenshot image)
-                    </div>
-                    <div class="padlet-content">   
-                        <span class="week-label">Week 3</span>
-                        <h4>Histogram Equalization in Medical Imaging</h4>
-                        <div class="contribution-type">
-                            📄 Research Article
-                        </div>
-                        <p>Shared peer-reviewed article on adaptive histogram equalization for enhancing X-ray images. Included summary and discussion on clinical applications, helping classmates understand real-world implementation.</p>
-                    </div>
-                </div>
-
-                <!-- Padlet Post 3 -->
-                <div class="padlet-post">
-                    <div class="padlet-screenshot">
-                        Screenshot: Week 5 Padlet Post<br>
-                        (Replace with actual screenshot image)
-                    </div>
-                    <div class="padlet-content">
-                        <span class="week-label">Week 5</span>
-                        <h4>
