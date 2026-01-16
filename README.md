@@ -66,10 +66,10 @@ In this course, I have transitioned from understanding images as simple files to
 | **Tools** | MATLAB, Python OpenCV, Git, VS Code |
 
 ## 💻 Project Highlights
-Brief overview of my contributions to the **Group Assignment (15%)**:
-* **Project Title:** [Your Group Project Title Here]
-* **Role:** [e.g., Lead Developer / Algorithm Researcher]
-* **Key Achievement:** Implemented [Specific Technique] which improved result accuracy by [X]%.
+Brief overview of contributions to the **Group Assignment**:
+* **Project Title:** Food Grading System
+* **Role:** Feature Extraction 
+* **Key Achievement:** Implemented feature extraction which successfully finding important info about food quality.
 
 ---
 © 2026 Digital Portfolio || Yeo Kheong Jie
