@@ -53,9 +53,9 @@ I remained highly engaged in the class Padlet throughout Weeks 1-14. My contribu
 
 ## 🧠 Section B: Personal Reflection
 In this course, I have transitioned from understanding images as simple files to viewing them as discrete 2D signals. Key areas of growth include:
-1.  **Technical Insight:** 
+1.  **Technical Insight** 
 2.  **Problem Solving:** 
-3.  **Future Impact:** 
+3.  **Future Impact** 
 
 ## 🛠️ Technical Skills Mastered
 | Category | Concepts & Tools |
