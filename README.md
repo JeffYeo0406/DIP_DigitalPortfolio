@@ -11,7 +11,7 @@
 ---
 
 ## 🔗 Live Portfolio Link
-**[👉 Click Here to View My Live Portfolio](https://jeffyeo0406.github.io/portfolio/)**
+**[👉 Click Here to View My Live Portfolio](https://jeffyeo0406.github.io/DIP_DigitalPortfolio/)**
 
 ---
 
